@@ -1,8 +1,11 @@
 body {
+  background: radial-gradient(ellipse at bottom, #c770f6 0%, #b663f1 100%);
+  overflow-x: hidden;
+  color: white;
   text-align: center;
   font-family: Arial;
-  background: #ffe6f0;
-  margin-top: 120px;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .gif {
@@ -36,7 +39,145 @@ button {
   }
 
   100% {
-    transform: translateY(100vh);
+    transform: translateY(150vh);
     opacity: 0;
   }
+}
+
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffe6f0;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 1px rgba(255, 182, 193, 0.8);
+  opacity: 0.3;
+  animation: romanticTwinkle 5s infinite ease-in-out;
+}
+
+/* small stars */
+
+.stars {
+  box-shadow:
+    50px 80px white,
+    120px 200px white,
+    300px 150px white,
+    500px 400px white,
+    700px 100px white,
+    900px 300px white,
+    1100px 200px white;
+  animation: moveStars 50s linear infinite;
+}
+
+/* medium stars */
+
+.stars2 {
+  box-shadow:
+    150px 400px white,
+    350px 250px white,
+    600px 500px white,
+    800px 200px white,
+    1000px 350px white;
+  animation: moveStars 100s linear infinite;
+}
+
+/* big stars */
+
+.stars3 {
+  box-shadow:
+    200px 100px white,
+    400px 300px white,
+    650px 150px white,
+    900px 450px white;
+  animation: moveStars 150s linear infinite;
+}
+
+.shootingStar {
+  position: absolute;
+  top: 15%;
+  left: -100px;
+  width: 100vw;
+  height: 2px;
+  background: #fd52aa;
+  z-index: -1;
+  overflow: hidden;
+  animation: shootingStar 1s ease-in-out infinite;
+}
+
+
+
+
+.photo {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  right: 5%;
+  bottom: 30%;
+  width: 110px;
+  border-radius: 10px;
+  display: none;
+  z-index: 1;
+  animation: float 2s infinite alternate ease-in-out;
+}
+
+.p1 {
+  top: 20%;
+  left: 10%;
+}
+
+.p2 {
+  top: 60%;
+  left: 15%;
+}
+
+.p3 {
+  top: 25%;
+  left: 30%;
+}
+
+.loveVideo {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  right: 90%;
+  bottom: 90px;
+  width: 200px;
+  border-radius: 10px;
+  display: none;
+  animation: float 3s infinite alternate ease-in-out;
+}
+
+.v1 {
+  bottom: 10%;
+  left: 80%;
+}
+
+.v2 {
+  top: 20%;
+  left: 80%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(200px);
+  }
+}
+
+#galaxy {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
 }
